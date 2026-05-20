@@ -1,11 +1,38 @@
 const axios = require("axios")
 const cheerio = require("cheerio")
 const fs = require("fs");
+const { sendMail } = require("./mail");
 
+const ROUTING = {
+    scorpio: "nick.deuja045@gmail.com",
+    taurus: "sisriksha780@gmail.com",
+    // change if needed
+};
 
+const QUOTES = [
+    "Believe you can and you're halfway there.",
+    "It always seems impossible until it's done.",
+    "You are stronger than you think.",
+    "Small steps every day lead to big results.",
+    "Your only limit is your mind.",
+    "Hard times never last, but hard people do.",
+    "Dream it. Wish it. Do it.",
+];
+
+const TASKS = [
+    "Finish the project you started",
+    "Apply for the JOb",
+    "Revise what you did today",
+    "Spend some time for health",
+    "Be kind And respectful to husband"
+]
+
+function random(arr) {
+    return arr[Math.floor(Math.random() * arr.length)];
+}
 async function scraper() {
     try {
-        const horos = ["scorpio", "taurus", "gemini"];
+        const horos = Object.keys(ROUTING);
         const results = [];
 
         for (const sign of horos) {
@@ -29,6 +56,21 @@ async function scraper() {
 
             // 3. Append directly to the file (creates file if missing)
             fs.appendFileSync("horoscopes.json", stringLine);
+            // Build email body
+            const body =
+                `🔮 ${sign.toUpperCase()} Horoscope — ${date}\n\n` +
+                `${horoscope}\n\n` +
+                `─────────────────────----------------------\n` +
+                `💪 Quote of the day:\n` +
+                `"${random(QUOTES)}"` +
+                `─────────────────────----------------------\n` +
+                `🚜👷🚧🏗️ Task of the day:\n` +
+                `Please do your list part ${random(TASKS)}`;
+
+            // Send to the right person
+            const to = ROUTING[sign];
+            await sendMail(body, to);
+            console.log(`📬 Sent ${sign} horoscope to ${to}`);
         }
     } catch (error) {
         console.log("Error:", error.message);
