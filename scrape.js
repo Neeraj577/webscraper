@@ -17,6 +17,22 @@ const QUOTES = [
     "Your only limit is your mind.",
     "Hard times never last, but hard people do.",
     "Dream it. Wish it. Do it.",
+    // --- Taurus Focused (Grounded, Patience, Luxury, Stability) ---
+    "Nature does not hurry, yet everything is accomplished.",
+    "Invest in your peace; it pays the highest dividends.",
+    "True wealth is a quiet mind and a comfortable life.",
+    "Consistency is the secret sauce of greatness.",
+    "Be stubborn about your goals, but flexible about your methods.",
+    "Growth takes time. Trust the roots you are building.",
+    "Comfort isn't just a place; it's a state of being.",
+
+    // --- Scorpio Focused (Intensity, Transformation, Intuition, Power) ---
+    "The phoenix must burn to emerge from the ashes.",
+    "Do not fear the dark; it is where stars are born.",
+    "Your intensity is not a flaw; it is your superpower.",
+    "To transform your life, you must first master your depth.",
+    "Power isn't loud; it's the quiet certainty within you.",
+    "Let go of what is heavy, and make space for what is true."
 ];
 
 const TASKS = [
@@ -24,7 +40,25 @@ const TASKS = [
     "Apply for the JOb",
     "Revise what you did today",
     "Spend some time for health",
-    "Be kind And respectful to husband"
+    "Be kind And respectful to husband", 
+    // --- Taurus Tasks (Sensory, Stability, Practicality) ---
+    "Organize your finances and check your savings goals",
+    "Cook a comforting, healthy meal from scratch",
+    "Spend 15 minutes grounding barefoot in nature or tending to plants",
+    "Declutter your immediate physical workspace for ultimate comfort",
+    "Stretch your body and give yourself a well-deserved neck massage",
+    "Buy yourself a small, high-quality treat to celebrate your hard work",
+    "Stick firmly to your morning routine without checking your phone first",
+
+    // --- Scorpio Tasks (Depth, Emotional Release, Focus) ---
+    "Journal your deepest thoughts to release any lingering resentment",
+    "Have a deeply honest, uninterrupted conversation with a loved one",
+    "Dive into a complex problem that requires deep, uninterrupted research",
+    "Practice a 10-minute digital detox to protect your energetic boundaries",
+    "Forgive someone or let go of a minor grudge from this week",
+    "Listen to your raw intuition on a decision you've been overthinking",
+    "Do something solo today to recharge your mysterious inner world",
+    "Plan a meaningful, intimate date night or gesture for your partner"
 ]
 
 function random(arr) {
